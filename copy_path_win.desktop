@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=all/all;
+Actions=copy_path_win
+Icon=edit-copy-path
+
+[Desktop Action copy_path_win]
+Name=Copy Path (Windows)
+Icon=edit-copy-path
+Exec=sh -c 'wpath=$(echo %U | tr "/" "\\\\"); qdbus org.kde.klipper /klipper org.kde.klipper.klipper.setClipboardContents "Z:${wpath}"'
